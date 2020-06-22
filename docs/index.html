@@ -1,21 +1,152 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head    
   <meta charset="UTF-8">
-  <title>Document</title>
+  <title>数字营造学社</title>
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <meta name="description" content="Description">
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify/lib/themes/vue.css">
+  <link rel="stylesheet" href="//unpkg.com/gitalk/dist/gitalk.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/vuep/dist/vuep.css">
+  <script>
+    var _hmt = _hmt || [];
+    (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?f5bd120e1d351a666dc307fbf05e38d2";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
 </head>
 <body>
   <div id="app"></div>
   <script>
+    var gitalkConfig = {
+        clientID: '6795d3ec9c6f9e318e59',
+        clientSecret: 'cfe1e6465695bc3124744d877d4e5026b2c314a0',
+        //accessToken: 'c2c0d38a8cb2f9c26277269568bf603fef7fa56ec',
+        repo: 'digit-x',
+        owner: 'richieBao',
+        admin: ["richieBao"],
+        id: window.location.pathname,
+        distractionFreeMode: false
+    };    
     window.$docsify = {
-      name: '',
-      repo: ''
+      name: '数字营造学社',
+      repo: 'https://github.com/digit-x/digit-x',
+      auto2top: true,
+      coverpage: true,
+      loadSidebar: true,
+      loadNavbar: true,
+      maxLevel: 4,
+      subMaxLevel: 3,
+      mergeNavbar: true,
+      search: {
+            paths: 'auto',
+            placeholder: '🔍 Type to search ',
+            noData: '😞 No Results! ',
+            depth: 3
+        },
+        pagination: {
+            previousText: 'Previous',
+            nextText: 'Next',
+            crossChapter: true
+        },
+        copyCode: {
+            buttonText: 'Copy to clipboard',
+            errorText: 'Error',
+            successText: 'Copied'
+        },
+        count: {
+            countable: true,
+            position: 'top',
+            margin: '10px',
+            float: 'right',
+            fontsize: '0.9em',
+            color: 'rgb(90,90,90)',
+            language: 'chinese',
+            localization: {
+                words: "",
+                minute: ""
+            },
+            isExpected: true
+        },
+        plugins: [
+            function (hook, vm) {
+                hook.doneEach(function () {
+                    // parse twemoji
+                    twemoji.parse(document);
+                    var label='', domObj, main, divEle, gitalk;
+                    var labels = vm.route.path.split('/');
+                    // if(labels && labels.startsWith('')
+                    if(labels.length) {
+                        for (let i = 0; i < labels.length; i++) {
+                            var v = labels[i]
+                            if(v && v !=='README') {
+                                label = v
+                                break;
+                            }
+                        }
+                    }
+
+                    console.log('vm', vm)
+                    console.log('label', label)
+                    domObj = Docsify.dom;
+                    main = domObj.getNode("#main");
+
+                    Array.apply(
+                        null,
+                        document.querySelectorAll("div.gitalk-container")
+                    ).forEach(function (ele) {
+                        ele.remove();
+                    });
+
+                    divEle = domObj.create("div");
+                    divEle.id = "gitalk-container-" + label;
+                    divEle.className = "gitalk-container";
+                    divEle.style = "width: " + main.clientWidth + "px; margin: 0 auto 20px;";
+                    domObj.appendTo(domObj.find(".content"), divEle);
+                    gitalk = new Gitalk(
+                        Object.assign(gitalkConfig, {id: !label ? "home" : label})
+                    );
+                    gitalk.render("gitalk-container-" + label);
+                });
+            }
+        ],
+        
     }
-  </script>
-  <script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>
+</script>
+
+<script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/vuep/dist/vuep.min.js"></script>
+<!--评论功能，添加issue-->
+<script src="//unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/plugins/search.js"></script>
+<script src="//unpkg.com/docsify-pagination/dist/docsify-pagination.min.js"></script>
+<!--放大图片-->
+<script src="//unpkg.com/docsify/lib/plugins/zoom-image.js"></script>
+<!--代码高亮功能-->
+<script src="//unpkg.com/prismjs/components/prism-bash.min.js"></script>
+<script src="//unpkg.com/prismjs/components/prism-java.min.js"></script>
+<script src="//unpkg.com/prismjs/components/prism-python.min.js"></script>
+<script src="//unpkg.com/prismjs/components/prism-javascript.min.js"></script>
+<!--复制code-->
+<script src="https://unpkg.com/docsify-copy-code@2"></script>
+<!--计数-->
+<script src="//unpkg.com/docsify-count/dist/countable.min.js"></script>
+<!--tab功能-->
+<script src="https://cdn.jsdelivr.net/npm/docsify-tabs@1"></script>
+<!--流程图-->
+<script src="//unpkg.com/mermaid/dist/mermaid.js"></script>
+<script src="//unpkg.com/docsify-mermaid@latest/dist/docsify-mermaid.js"></script>
+<script>mermaid.initialize({startOnLoad: true});</script>
+<!--推特表情-->
+<script src="//cdn.jsdelivr.net/gh/TaQini/docsify-twemoji@master/twemoji.min.js"></script>
+<!--<script src="https://cdn.jsdelivr.net/npm/docsify-example-panels@1"></script>-->
+<!--format-->
+
+
 </body>
-</html>
+</html> 
