@@ -1,1 +1,1 @@
-<img src="./imgs/avatar.png" width="400">
+<img src="./imgs/avatar_large.png" width="600">
