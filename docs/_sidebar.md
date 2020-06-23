@@ -9,6 +9,16 @@
         * [IDC.3 建模途径横向比较-结构](./markdown/3dmodeling_approach_comparison_structure.md)
         * [IDC.4+5 参数化设计_认知](./markdown/parametric_design_cognition.md)
         * [IDC.6 参数化设计_数据类型和结构_核心](./markdown/parameterized_design_data_type_and_structure_core.md)
+        * [IDC.我们小组的屋](./markdown/our_group_house.md)
+        * [IDC.7 动力学与索膜结构](./markdown/dynamics_and_cable-membrane_structure.md)
+        * [IDC.8 IPMS与折叠空间](./markdown/IPMS_and_folding_space.md)
+        * [IDC.9+10 Eco与参数化设计-A](./markdown/ECO_and_parametric_design-A.md)
+        * [IDC.11 Eco与参数化设计-B](./markdown/ECO_and_parametric_design-B.md)
+        * [IDC. 动力学模拟与实际构建](./markdown/dynamic_simulation_and_actual_construction.md)
+        * [IDC.12 结课](./markdown/IDC_class_ending.md)
+
+    * 机器人建造基础 basics for robot construction
+        * [RCB. 课程目录](./markdown/RCB_course_catalog.md)
 
     * misc
         * [m.1 数字营造概述](./markdown/overview_of_digital_construction.md)
@@ -25,6 +35,8 @@
         * [m.12 GIS(python)+SWWM城市雨洪管理](./markdown/GIS(python)_SWWM_urban_stormwater_management.md)
         * [m.13《地理信息系统(GIS)在风景园林和城市规划中的应用》_13版](./markdown/application_of_GIS_in_landscape_and_urban_planning_V13.md)
         * [m.14 提取子流域](./markdown/extract_subwatershed.md)
+        * [m.15 python测验_20171101_根据提供的数据采集程序下载自选城市的poi数据，基于python编写描述性统计(包括评分和价格等相关性分析)及图表代码](./markdown/python_test_20171101.md)
+        * [m.16 “数字营造”本科教学体系建构](./markdown/construction_of_undergraduate_teaching_system_of_digital_construction.md)
 * 检索
     * [知识点检索](./markdown/codeToolIdx.md)
     * [参考文献索引](./markdown/reference.md)
