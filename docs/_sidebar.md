@@ -6,8 +6,8 @@
     * 2.1 
         * [2.1.1 ](./notebook_code/BaiduMapPOI_collection_singleClassification.md)
     * misc
-        * [m.1 数字营造概述](./markdown/overview_of_digital_construction)
-        * [m.2]()
+        * [m.1 数字营造概述](./markdown/overview_of_digital_construction.md)
+        * [m.2 建模途径横向比较-结构](./markdown/modeling_approach_comparison_structure.md)
 * 检索
     * [知识点检索](./markdown/codeToolIdx.md)
     * [参考文献索引](./markdown/reference.md)
