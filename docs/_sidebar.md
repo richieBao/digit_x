@@ -19,6 +19,13 @@
 
     * 机器人建造基础 basics for robot construction
         * [RCB. 课程目录](./markdown/RCB_course_catalog.md)
+        * [RCB.1 计算机与智能](./markdown/RCB_computer_and_intelligence.md)
+        * [RCB.2 arduinoUNO与IDE](./markdown/RCB_arduinoUno_and_IDE.md)
+        * [RCB.3 ArduinoC概述与数据类型](./markdown/RCB_an_overview_of_the_Arduino_C_and_data_types.md)
+        * [RCB.4 C语言的逻辑判断与循环](./markdown/RCB_C_logic_judgment_and_loop.md)
+        * [RCB.5 C语言函数与作用域和存储类型](./markdown/RCB_C_function_with_scope_and_storage_types.md)
+        * [RCB.6 指针_A](./markdown/RCB_C_point_A.md)
+        * [RGB.7 指针_B](./markdown/RCB_C_point_B.md)
 
     * misc
         * [m.1 数字营造概述](./markdown/overview_of_digital_construction.md)

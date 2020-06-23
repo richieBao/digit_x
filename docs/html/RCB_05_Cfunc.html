@@ -1,0 +1,308 @@
+<!doctype html>
+<html>
+<meta charset="utf-8">
+<head>
+    <style type="text/css">
+    body { background-color: transparent !important; }
+img { max-width: 100% !important; height: auto !important; }
+
+    </style>
+
+    <style type="text/css">
+    body { background-color: transparent !important; }
+img { max-width: 100% !important; height: auto !important; }
+@keyframes flash { 
+  0% { color: rgb(128, 203, 196); }
+  10% { color: rgb(0, 137, 123); }
+  40% { color: rgb(0, 137, 123); }
+  50% { color: rgb(128, 203, 196); }
+  60% { color: rgb(0, 137, 123); }
+  90% { color: rgb(0, 137, 123); }
+}
+.highlighted-anchor { animation: flash 1s; }
+body { margin: 0px auto; font-family: Helvetica, sans-serif, Tahoma, Arial, Verdana, Geneva, Georgia, Palatino, "Times New Roman", "Hiragino Sans GB", 冬青黑体, "Microsoft YaHei", 微软雅黑, "Microsoft YaHei UI", "WenQuanYi Micro Hei", 文泉驿雅黑, Dengxian, 等线体, STXihei, 华文细黑, "Liberation Sans", "Droid Sans", NSimSun, 新宋体, SimSun, 宋体; color: rgb(34, 34, 34); line-height: 1.5; padding: 15px; background: rgb(245, 245, 245); font-size: 16px; }
+h1, h2, h3, h4, h5, h6 { color: rgb(34, 34, 34); font-weight: bold; margin-top: 20px; margin-bottom: 10px; padding: 0px; }
+p { padding: 0px; margin-top: 16px; margin-bottom: 16px; }
+h1 { font-size: 36px; }
+h2 { font-size: 30px; }
+h3 { font-size: 26px; }
+h4 { font-size: 22px; }
+h5 { font-size: 20px; }
+h6 { font-size: 18px; }
+a { color: rgb(0, 153, 255); margin: 0px; padding: 0px; vertical-align: baseline; text-decoration: none; word-break: break-all; }
+a:hover { text-decoration: underline; color: rgb(255, 102, 0); }
+a:visited { color: purple; }
+ul, ol { padding: 0px 0px 0px 24px; }
+li { line-height: 24px; }
+li ul, li ol { margin-left: 16px; }
+p, ul, ol { font-size: 16px; line-height: 24px; }
+pre { display: block; overflow-y: hidden; overflow-x: auto; }
+code { font-family: Consolas, Monaco, monospace, Courier; font-size: 16px; color: rgb(142, 36, 170); word-break: break-all; }
+pre code { display: block; overflow-x: auto; padding: 0.5em; color: rgb(34, 34, 34); background-color: rgb(224, 224, 224); line-height: 1.5; font-family: Consolas, Monaco, monospace, Courier; white-space: pre; }
+aside { display: block; float: right; width: 390px; }
+blockquote { color: rgb(102, 102, 102); border-left: 0.5em solid rgb(122, 122, 122); padding: 0px 2em; margin-left: 0px; }
+blockquote p { color: rgb(102, 102, 102); }
+hr { display: block; text-align: left; margin: 1em 0px; border: none; height: 2px; background: rgb(153, 153, 153); }
+table { padding: 0px; border-collapse: collapse; }
+table tr { border-top: 1px solid rgb(204, 204, 204); background-color: white; margin: 0px; padding: 0px; }
+table tr:nth-child(2n) { background-color: rgb(248, 248, 248); }
+table tr th { font-weight: bold; border: 1px solid rgb(204, 204, 204); margin: 0px; padding: 6px 13px; }
+table tr td { border: 1px solid rgb(204, 204, 204); margin: 0px; padding: 6px 13px; }
+table tr th :first-child, table tr td :first-child { margin-top: 0px; }
+table tr th :last-child, table tr td :last-child { margin-bottom: 0px; }
+div.mermaid-diagram { overflow-y: hidden; }
+div.flowchart-diagram { overflow-y: hidden; }
+.img-package { text-align: center; }
+img.img-center { display: block; margin-left: auto; margin-right: auto; }
+div.img-caption { min-width: 20%; max-width: 80%; display: inline-block; padding: 10px; margin: 0px auto; border-bottom: 1px solid rgb(192, 192, 192); color: rgb(108, 108, 108); text-align: center; line-height: 1.5; }
+table.hljs-ln tr { border: none; background-color: transparent; }
+table.hljs-ln tr td { border: none; background-color: transparent; }
+table.hljs-ln tr td.hljs-ln-numbers { user-select: none; text-align: center; color: rgb(170, 170, 170); border-right: 1px solid rgb(204, 204, 204); vertical-align: top; padding-right: 5px; white-space: nowrap; }
+table.hljs-ln tr td.hljs-ln-code { padding-left: 10px; }
+::-webkit-scrollbar { background-color: rgb(234, 234, 234); width: 14px; height: 14px; border: none; }
+::-webkit-scrollbar-corner { background-color: rgb(234, 234, 234); }
+::-webkit-scrollbar-button { height: 14px; width: 14px; background-color: rgb(234, 234, 234); }
+::-webkit-scrollbar-button:hover { background-color: rgb(208, 208, 208); }
+::-webkit-scrollbar-button:active { background-color: rgb(178, 178, 178); }
+::-webkit-scrollbar-track { background-color: rgb(234, 234, 234); }
+::-webkit-scrollbar-thumb { border: none; background-color: rgb(218, 218, 218); }
+::-webkit-scrollbar-thumb:hover { background-color: rgb(208, 208, 208); }
+::-webkit-scrollbar-thumb:active { background-color: rgb(178, 178, 178); }
+::-webkit-scrollbar-button:horizontal:increment { background-image: url("./05_C语言函数_files/right.svg"); background-repeat: no-repeat; background-size: contain; }
+::-webkit-scrollbar-button:horizontal:decrement { background-image: url("./05_C语言函数_files/left.svg"); background-repeat: no-repeat; background-size: contain; }
+::-webkit-scrollbar-button:vertical:increment { background-image: url("./05_C语言函数_files/down.svg"); background-repeat: no-repeat; background-size: contain; }
+::-webkit-scrollbar-button:vertical:decrement { background-image: url("./05_C语言函数_files/up.svg"); background-repeat: no-repeat; background-size: contain; }
+.hljs { display: block; overflow-x: auto; padding: 0.5em; color: rgb(171, 178, 191); background: rgb(44, 49, 58); }
+.hljs-comment, .hljs-quote { color: rgb(92, 99, 112); font-style: italic; }
+.hljs-doctag, .hljs-keyword, .hljs-formula { color: rgb(198, 120, 221); }
+.hljs-section, .hljs-name, .hljs-selector-tag, .hljs-deletion, .hljs-subst { color: rgb(224, 108, 117); }
+.hljs-literal { color: rgb(86, 182, 194); }
+.hljs-string, .hljs-regexp, .hljs-addition, .hljs-attribute, .hljs-meta-string { color: rgb(152, 195, 121); }
+.hljs-built_in, .hljs-class .hljs-title { color: rgb(230, 192, 123); }
+.hljs-attr, .hljs-variable, .hljs-template-variable, .hljs-type, .hljs-selector-class, .hljs-selector-attr, .hljs-selector-pseudo, .hljs-number { color: rgb(209, 154, 102); }
+.hljs-symbol, .hljs-bullet, .hljs-link, .hljs-meta, .hljs-selector-id, .hljs-title { color: rgb(97, 174, 238); }
+.hljs-emphasis { font-style: italic; }
+.hljs-strong { font-weight: bold; }
+.hljs-link { text-decoration: underline; }
+.hljs-ln { border-collapse: collapse; }
+.hljs-ln td { padding: 0px; }
+.hljs-ln-n::before { content: attr(data-line-number); }
+.MathJax_Hover_Frame { border-radius: 0.25em; box-shadow: rgb(136, 51, 170) 0px 0px 15px; display: inline-block; position: absolute; border: 1px solid rgb(170, 102, 221) !important; }
+.MathJax_Menu_Button .MathJax_Hover_Arrow { position: absolute; cursor: pointer; display: inline-block; border: 2px solid rgb(170, 170, 170); border-radius: 4px; font-family: "Courier New", Courier; font-size: 9px; color: rgb(240, 240, 240); }
+.MathJax_Menu_Button .MathJax_Hover_Arrow span { display: block; background-color: rgb(170, 170, 170); border: 1px solid; border-radius: 3px; line-height: 0; padding: 4px; }
+.MathJax_Hover_Arrow:hover { color: white !important; border: 2px solid rgb(204, 204, 204) !important; }
+.MathJax_Hover_Arrow:hover span { background-color: rgb(204, 204, 204) !important; }
+#MathJax_About { position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: rgb(221, 221, 221); color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0px; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; box-shadow: rgb(128, 128, 128) 0px 10px 20px; }
+#MathJax_About.MathJax_MousePost { outline: none; }
+.MathJax_Menu { position: absolute; background-color: white; color: black; width: auto; padding: 2px; border: 1px solid rgb(204, 204, 204); margin: 0px; cursor: default; font-style: normal; font-weight: normal; font-size: 12px; font-family: "Microsoft YaHei UI"; font-stretch: normal; font-variant: normal; text-align: left; text-indent: 0px; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; box-shadow: rgb(128, 128, 128) 0px 10px 20px; }
+.MathJax_MenuItem { padding: 2px 2em; background: transparent; }
+.MathJax_MenuArrow { position: absolute; right: 0.5em; padding-top: 0.25em; color: rgb(102, 102, 102); font-size: 0.75em; }
+.MathJax_MenuActive .MathJax_MenuArrow { color: white; }
+.MathJax_MenuArrow.RTL { left: 0.5em; right: auto; }
+.MathJax_MenuCheck { position: absolute; left: 0.7em; }
+.MathJax_MenuCheck.RTL { right: 0.7em; left: auto; }
+.MathJax_MenuRadioCheck { position: absolute; left: 1em; }
+.MathJax_MenuRadioCheck.RTL { right: 1em; left: auto; }
+.MathJax_MenuLabel { padding: 2px 2em 4px 1.33em; font-style: italic; }
+.MathJax_MenuRule { border-top: 1px solid rgb(204, 204, 204); margin: 4px 1px 0px; }
+.MathJax_MenuDisabled { color: graytext; }
+.MathJax_MenuActive { background-color: highlight; color: highlighttext; }
+.MathJax_MenuDisabled:focus, .MathJax_MenuLabel:focus { background-color: rgb(232, 232, 232); }
+.MathJax_ContextMenu:focus { outline: none; }
+.MathJax_ContextMenu .MathJax_MenuItem:focus { outline: none; }
+#MathJax_AboutClose { top: 0.2em; right: 0.2em; }
+.MathJax_Menu .MathJax_MenuClose { top: -10px; left: -10px; }
+.MathJax_MenuClose { position: absolute; cursor: pointer; display: inline-block; border: 2px solid rgb(170, 170, 170); border-radius: 18px; font-family: "Courier New", Courier; font-size: 24px; color: rgb(240, 240, 240); }
+.MathJax_MenuClose span { display: block; background-color: rgb(170, 170, 170); border: 1.5px solid; border-radius: 18px; line-height: 0; padding: 8px 0px 6px; }
+.MathJax_MenuClose:hover { color: white !important; border: 2px solid rgb(204, 204, 204) !important; }
+.MathJax_MenuClose:hover span { background-color: rgb(204, 204, 204) !important; }
+.MathJax_MenuClose:hover:focus { outline: none; }
+.MathJax_Preview .MJXf-math { color: inherit !important; }
+.MJX_Assistive_MathML { top: 0px; left: 0px; clip: rect(1px 1px 1px 1px); user-select: none; position: absolute !important; padding: 1px 0px 0px !important; border: 0px !important; height: 1px !important; width: 1px !important; overflow: hidden !important; display: block !important; }
+.MJX_Assistive_MathML.MJX_Assistive_MathML_Block { width: 100% !important; }
+#MathJax_Zoom { position: absolute; background-color: rgb(240, 240, 240); overflow: auto; display: block; z-index: 301; padding: 0.5em; border: 1px solid black; margin: 0px; font-weight: normal; font-style: normal; text-align: left; text-indent: 0px; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; box-sizing: content-box; box-shadow: rgb(170, 170, 170) 5px 5px 15px; }
+#MathJax_ZoomOverlay { position: absolute; left: 0px; top: 0px; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0px; padding: 0px; margin: 0px; background-color: white; opacity: 0; }
+#MathJax_ZoomFrame { position: relative; display: inline-block; height: 0px; width: 0px; }
+#MathJax_ZoomEventTrap { position: absolute; left: 0px; top: 0px; z-index: 302; display: inline-block; border: 0px; padding: 0px; margin: 0px; background-color: white; opacity: 0; }
+.MathJax_Preview { color: rgb(136, 136, 136); }
+#MathJax_Message { position: fixed; left: 1px; bottom: 2px; background-color: rgb(230, 230, 230); border: 1px solid rgb(149, 149, 149); margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap; }
+#MathJax_MSIE_Frame { position: absolute; top: 0px; left: 0px; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px; }
+.MathJax_Error { color: rgb(204, 0, 0); font-style: italic; }
+.MJXp-script { font-size: 0.8em; }
+.MJXp-right { transform-origin: right center 0px; }
+.MJXp-bold { font-weight: bold; }
+.MJXp-italic { font-style: italic; }
+.MJXp-scr { font-family: MathJax_Script, "Times New Roman", Times, STIXGeneral, serif; }
+.MJXp-frak { font-family: MathJax_Fraktur, "Times New Roman", Times, STIXGeneral, serif; }
+.MJXp-sf { font-family: MathJax_SansSerif, "Times New Roman", Times, STIXGeneral, serif; }
+.MJXp-cal { font-family: MathJax_Caligraphic, "Times New Roman", Times, STIXGeneral, serif; }
+.MJXp-mono { font-family: MathJax_Typewriter, "Times New Roman", Times, STIXGeneral, serif; }
+.MJXp-largeop { font-size: 150%; }
+.MJXp-largeop.MJXp-int { vertical-align: -0.2em; }
+.MJXp-math { display: inline-block; line-height: 1.2; text-indent: 0px; font-family: "Times New Roman", Times, STIXGeneral, serif; white-space: nowrap; border-collapse: collapse; }
+.MJXp-display { display: block; text-align: center; margin: 1em 0px; }
+.MJXp-math span { display: inline-block; }
+.MJXp-box { text-align: center; display: block !important; }
+.MJXp-box::after { content: " "; }
+.MJXp-rule { margin-top: 0.1em; display: block !important; }
+.MJXp-char { display: block !important; }
+.MJXp-mo { margin: 0px 0.15em; }
+.MJXp-mfrac { margin: 0px 0.125em; vertical-align: 0.25em; }
+.MJXp-denom { width: 100%; display: inline-table !important; }
+.MJXp-denom > * { display: table-row !important; }
+.MJXp-surd { vertical-align: top; }
+.MJXp-surd > * { display: block !important; }
+.MJXp-script-box > * { height: 50%; display: table !important; }
+.MJXp-script-box > * > * { vertical-align: top; display: table-cell !important; }
+.MJXp-script-box > :last-child > * { vertical-align: bottom; }
+.MJXp-script-box > * > * > * { display: block !important; }
+.MJXp-mphantom { visibility: hidden; }
+.MJXp-munderover { display: inline-table !important; }
+.MJXp-over { text-align: center; display: inline-block !important; }
+.MJXp-over > * { display: block !important; }
+.MJXp-munderover > * { display: table-row !important; }
+.MJXp-mtable { vertical-align: 0.25em; margin: 0px 0.125em; }
+.MJXp-mtable > * { vertical-align: middle; display: inline-table !important; }
+.MJXp-mtr { display: table-row !important; }
+.MJXp-mtd { text-align: center; padding: 0.5em 0px 0px 0.5em; display: table-cell !important; }
+.MJXp-mtr > .MJXp-mtd:first-child { padding-left: 0px; }
+.MJXp-mtr:first-child > .MJXp-mtd { padding-top: 0px; }
+.MJXp-mlabeledtr { display: table-row !important; }
+.MJXp-mlabeledtr > .MJXp-mtd:first-child { padding-left: 0px; }
+.MJXp-mlabeledtr:first-child > .MJXp-mtd { padding-top: 0px; }
+.MJXp-merror { background-color: rgb(255, 255, 136); color: rgb(204, 0, 0); border: 1px solid rgb(204, 0, 0); padding: 1px 3px; font-style: normal; font-size: 90%; }
+.MJXp-scale0 { transform: scaleX(0); }
+.MJXp-scale1 { transform: scaleX(0.1); }
+.MJXp-scale2 { transform: scaleX(0.2); }
+.MJXp-scale3 { transform: scaleX(0.3); }
+.MJXp-scale4 { transform: scaleX(0.4); }
+.MJXp-scale5 { transform: scaleX(0.5); }
+.MJXp-scale6 { transform: scaleX(0.6); }
+.MJXp-scale7 { transform: scaleX(0.7); }
+.MJXp-scale8 { transform: scaleX(0.8); }
+.MJXp-scale9 { transform: scaleX(0.9); }
+.MathJax_PHTML .noError { font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid; }
+
+    </style>
+
+    <!-- EXTRA_PLACE_HOLDER -->
+
+<!-- HEAD_PLACE_HOLDER -->
+</head>
+<body>
+<blockquote>
+<p>实验器材：Arduino UNO(1)，面包板(1)，舵机(servo，1)；HC-SR03超声波测距模块(1)</p>
+</blockquote>
+<h1 id="toc_0"><a name="toc_0" class="vnote-anchor" href="#"></a>05_C语言函数与作用域和存储类型</h1>
+<p>大部分类型语言，基本函数都是其重要组成部分，同时函数库中已经编写好的的不计其数的函数，可以直接使用，从而快速搭建待解决问题的代码，实现相应的功能。C语言最初的设计思想是以最少的关键字实现一种轻便的语言，因此ANSI C只有32个关键字，而将许多标准的语言功能都放在了其标准库中实现。</p>
+<h2 id="toc_1"><a name="toc_1" class="vnote-anchor" href="#"></a>函数的基本结构</h2>
+<p><img src="./05_C语言函数_files/_1524881362_28665.jpg" alt=""></p>
+<p><strong>函数类型说明符：</strong>
+为调用函数返回值的类型，可以是任何类型。例如案例中，<code>return index;</code>返回的变量index的值为int类型。如果不返回任何值，则使用void关键字作为函数类型说明符。</p>
+<p><strong>函数名</strong>
+函数遵循变量的命名规则，好的名字应该可以反应这个函数做什么，而非如何做。通常函数如同黑箱，只告诉该函数提供哪些功能，不会反应任何实现这些功能的细节。当函数名相同时，但是传入的函数参数不同，编译器会自动选择对应的函数。函数名和函数参数统称为函数签名。</p>
+<p><strong>函数参数</strong>
+传入函数中，需要使用的参数，当未传入具体值时的参数变量为形参，而当传入具体值时则一般称为为实参。传入的变量同样需要确定数据类型，例如此例中<code>char str[]</code>为char类型的数组。</p>
+<p><strong>函数体</strong>
+{ }中包括的所有内容。编写代码时，尽量使代码简洁，易读。</p>
+<h2 id="toc_2"><a name="toc_2" class="vnote-anchor" href="#"></a>程序编写经验谈</h2>
+<ol>
+<li>尽量用函数逐一解决每个“点”的问题</li>
+<li>一定要有关键注释，日子久了肯定会忘，回来借助注释能快速理解当时代码的用意</li>
+<li>变量名称要尽量体现其含义，增加代码易读性，常规为codeStandard或者code_standard等格式</li>
+<li>能用巧妙简介的算法，就避免冗长的代码</li>
+<li>不断用<code>Serial.print();</code>查看结果，分析和组织数据结构</li>
+<li>庞大的库，很难都记住，但是知道如何查找手册或利用网络信息即可</li>
+<li>一定要有自己的一个常用代码集，方便日后快速查询</li>
+<li>代码尽量具有通用性，方便移植</li>
+<li>函数尽可能被设计用于完成单一任务，避免冗余复杂。</li>
+<li>尽可能避免一个函数依赖于另一个函数的程度</li>
+</ol>
+<h2 id="toc_3"><a name="toc_3" class="vnote-anchor" href="#"></a>函数实验(HC-SR03超声波测距模块)</h2>
+<h3 id="toc_4"><a name="toc_4" class="vnote-anchor" href="#"></a>HC-SR03超声波测距模块</h3>
+<p><img src="./05_C语言函数_files/_1524885304_11390.jpg" alt=""></p>
+<h3 id="toc_5"><a name="toc_5" class="vnote-anchor" href="#"></a>电路图</h3>
+<p><img src="./05_C语言函数_files/_1524885627_4733.jpg" alt=""></p>
+<h3 id="toc_6"><a name="toc_6" class="vnote-anchor" href="#"></a>实验程序(HC-SR03)</h3>
+<pre><code class="lang-C hljs"><table class="hljs-ln"><tbody><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="1"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line"><span class="hljs-comment">//richieball 2018-04-28</span></div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="2"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;Servo.h&gt;</span></span></div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="3"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line"><span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> TrigPin = <span class="hljs-number">4</span>; <span class="hljs-comment">//SR04控制端</span></div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="4"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line"><span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> EchoPin = <span class="hljs-number">5</span>; <span class="hljs-comment">//SR04接收端</span></div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="5"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line"><span class="hljs-keyword">float</span> distance;</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="6"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line"><span class="hljs-keyword">float</span> disTemp=<span class="hljs-number">0</span>;</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="7"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">Servo myservo;  </div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="8"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line"> </div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="9"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">setup</span><span class="hljs-params">()</span></span>{</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="10"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">    Serial.begin(<span class="hljs-number">9600</span>);</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="11"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">    myservo.attach(<span class="hljs-number">9</span>);</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="12"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">    myservo.write(<span class="hljs-number">45</span>);</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="13"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">    pinMode(TrigPin, OUTPUT); <span class="hljs-comment">//设置SR04控制端为输出</span></div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="14"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">    pinMode(EchoPin, INPUT); <span class="hljs-comment">//设置SR04接收端为输入</span></div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="15"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">    Serial.println(<span class="hljs-string">"Ultrasonic sensor:"</span>); <span class="hljs-comment">//程序PC串口测试用</span></div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="16"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">}</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="17"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line"> </div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="18"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">loop</span><span class="hljs-params">()</span> </span>{    </div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="19"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">    distance=sr04Distance(); </div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="20"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">    <span class="hljs-comment">//使用pulseIn()函数读取脉冲时间长度时，如果  没有脉冲则返回0，因此需要对该种情况做出判断，当返回为0时，保持舵机角度不变。</span></div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="21"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">    <span class="hljs-keyword">if</span> (distance&lt;<span class="hljs-number">1</span>){</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="22"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">      disTemp=disTemp;</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="23"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">    }<span class="hljs-keyword">else</span>{</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="24"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">      disTemp=distance;</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="25"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">    }</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="26"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">    <span class="hljs-keyword">if</span> (disTemp &lt;<span class="hljs-number">10</span> <span class="hljs-keyword">and</span> disTemp&gt;=<span class="hljs-number">0.1</span>){</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="27"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">      <span class="hljs-keyword">int</span> angleA=<span class="hljs-number">80</span>;</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="28"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">      myservo.write(angleA);</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="29"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">    }</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="30"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">    <span class="hljs-keyword">if</span> (disTemp&gt;=<span class="hljs-number">10</span>){</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="31"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">      <span class="hljs-keyword">int</span> angleB=<span class="hljs-number">10</span>;</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="32"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">      myservo.write(angleB);</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="33"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">    }</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="34"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">    Serial.print(distance);</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="35"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">    Serial.print(<span class="hljs-string">" cm"</span>);</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="36"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">    Serial.println();</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="37"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">    delay(<span class="hljs-number">1000</span>);    </div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="38"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">}</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="39"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line"> </div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="40"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line"><span class="hljs-function"><span class="hljs-keyword">float</span> <span class="hljs-title">sr04Distance</span><span class="hljs-params">()</span></span>{</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="41"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">    <span class="hljs-keyword">float</span> distance; <span class="hljs-comment">//测量距离变量</span></div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="42"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">    digitalWrite(TrigPin, LOW); <span class="hljs-comment">//SR04控制端输出低电平</span></div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="43"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">    delayMicroseconds(<span class="hljs-number">2</span>); <span class="hljs-comment">//延时</span></div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="44"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">    digitalWrite(TrigPin, HIGH); <span class="hljs-comment">//SR04控制端输出高电平</span></div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="45"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">    delayMicroseconds(<span class="hljs-number">10</span>); <span class="hljs-comment">//根据超声波测距模块说明延时10微秒</span></div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="46"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">    digitalWrite(TrigPin, LOW); <span class="hljs-comment">//SR04控制端输出低电平</span></div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="47"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">    distance = pulseIn(EchoPin, HIGH) / <span class="hljs-number">58.00</span>; <span class="hljs-comment">//使用pluseIn()检测脉冲宽度，并计算距离，可以根据实际测量值，调整计算公式除数</span></div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="48"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">    <span class="hljs-keyword">return</span> distance;</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="49"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">}</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="50"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line"> </div></td></tr></tbody></table></code></pre>
+<p>函数float sr04Distance()根据HC-SR03超声波测距模块的手册说明，对TrigPin设置高低电平的变化，从而从EchoPin端使用<a href="https://www.arduino.cc/reference/en/language/functions/advanced-io/pulsein/">pulseIn()函数</a>读取。</p>
+<h3 id="toc_7"><a name="toc_7" class="vnote-anchor" href="#"></a>逻辑运算符</h3>
+<p>在上述实验中<code>disTemp &lt;10 and disTemp&gt;=0.1</code>语句使用了逻辑与and(&amp;&amp;)，逻辑运算符：</p>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>含义</th>
+<th>举例</th>
+<th>描述(二进制)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&amp;&amp;</td>
+<td>逻辑与(AND)</td>
+<td>x &amp;&amp; y</td>
+<td>只有都为1时才为1</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td>逻辑或(OR)</td>
+</tr>
+<tr>
+<td>！</td>
+<td>逻辑非(NOT)</td>
+<td>!x</td>
+<td>1时为0，0时为1</td>
+</tr>
+</tbody>
+</table>
+<h2 id="toc_8"><a name="toc_8" class="vnote-anchor" href="#"></a>作用域和存储类型</h2>
+<h3 id="toc_9"><a name="toc_9" class="vnote-anchor" href="#"></a>作用域</h3>
+<p>作用域为数据对象在程序中的可见性和生命周期。通常可以分为语句块作用域、本地作用域和全局作用域。</p>
+<table>
+<thead>
+<tr>
+<th>作用域</th>
+<th>含义</th>
+<th>举例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>语句块作用域</td>
+<td>数据只存在于当前语句块的定义点至结束点的范围内</td>
+<td><code>if (disTemp &lt;10 and disTemp&gt;=0.1){int angleA=80; myservo.write(angleA);}</code></td>
+</tr>
+<tr>
+<td>本地作用域</td>
+<td>数据存在于从定义点开始，至整个函数结束的地方</td>
+<td><code>float sr04Distance(){ float distance; digitalWrite(TrigPin, LOW); delayMicroseconds(2);digitalWrite(TrigPin, HIGH); delayMicroseconds(10); digitalWrite(TrigPin, LOW); distance = pulseIn(EchoPin, HIGH) / 58.00; return distance;}</code></td>
+</tr>
+<tr>
+<td>全局作用域</td>
+<td>能够被程序中的所有函数访问。一般在函数之外的地方定义。</td>
+<td><code>float distance;float disTemp=0;</code></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>可以通过(&amp;)取址运算符获取变量地址，从而进一步证实不同作用域的变量地址情况。</p>
+</blockquote>
+<h3 id="toc_10"><a name="toc_10" class="vnote-anchor" href="#"></a>存储类型</h3>
+<p>Arduino C 可以识别4中存储类型(保留字)：auto、register、static和extern。</p>
+<h4 id="toc_11"><a name="toc_11" class="vnote-anchor" href="#"></a>auto存储类型</h4>
+<p>本地作用域下默认的变量存储类型，通常不需要显式的使用，处了强调语义，无任何意义。</p>
+<h4 id="toc_12"><a name="toc_12" class="vnote-anchor" href="#"></a>register存储类型</h4>
+<p>register存储类型告知编译器当前变量存储于芯片的寄存器(register)中，可以优化代码的执行效率。</p>
+<h4 id="toc_13"><a name="toc_13" class="vnote-anchor" href="#"></a>static存储类型</h4>
+<p>每次函数调用时，都会创建一组新的本地变量，意味着上次执行该函数所产生的本地变量的值丢失。一种解决方法时将其修改为全局变量，也可以使用static存储类型。例如在函数中声明<code>static int val=0;return ++val;</code>中，声明的val变量不会在每次调用函数时执行。可以通过串口打印该值，来查看变化情况。</p>
+<h4 id="toc_14"><a name="toc_14" class="vnote-anchor" href="#"></a>extern存储类型</h4>
+<p>当建立了多个程序文件时，如果其中一个程序文件需要另一程序文件的变量，则需使用extern存储类型。例如<code>extern int val;</code>，虽然该程序文件中未定义val变量，但创建了属性列表，从而可以使用在其它程序文件中所定义的val变量。此时需要注意使用#include "<a href="http://filename.xxx">filename.xxx</a>"C语言的预处理指令。</p>
+<blockquote>
+<p>volatile关键字，是一个变量修饰符，例如<code>volatile int lastTestValue;</code>告诉编译器当每次引用这个变量时，都需要从内存中载入。多数情况下，当使用变量时，其rvalue已经存在于寄存器中，无需重新从内存中载入。但有时内存中的值可能没有与寄存器中的值同步，需要使用volatile修饰符，编译器会在程序使用这个变量时重新获取其rvalue值，避免不同步的情况。</p>
+</blockquote>
+
+</body>
+</html>

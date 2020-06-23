@@ -1,0 +1,467 @@
+<!doctype html>
+<html>
+<meta charset="utf-8">
+<head>
+    <style type="text/css">
+    body { background-color: transparent !important; }
+img { max-width: 100% !important; height: auto !important; }
+
+    </style>
+
+    <style type="text/css">
+    body { background-color: transparent !important; }
+img { max-width: 100% !important; height: auto !important; }
+@keyframes flash { 
+  0% { color: rgb(128, 203, 196); }
+  10% { color: rgb(0, 137, 123); }
+  40% { color: rgb(0, 137, 123); }
+  50% { color: rgb(128, 203, 196); }
+  60% { color: rgb(0, 137, 123); }
+  90% { color: rgb(0, 137, 123); }
+}
+.highlighted-anchor { animation: flash 1s; }
+body { margin: 0px auto; font-family: Helvetica, sans-serif, Tahoma, Arial, Verdana, Geneva, Georgia, Palatino, "Times New Roman", "Hiragino Sans GB", 冬青黑体, "Microsoft YaHei", 微软雅黑, "Microsoft YaHei UI", "WenQuanYi Micro Hei", 文泉驿雅黑, Dengxian, 等线体, STXihei, 华文细黑, "Liberation Sans", "Droid Sans", NSimSun, 新宋体, SimSun, 宋体; color: rgb(34, 34, 34); line-height: 1.5; padding: 15px; background: rgb(245, 245, 245); font-size: 16px; }
+h1, h2, h3, h4, h5, h6 { color: rgb(34, 34, 34); font-weight: bold; margin-top: 20px; margin-bottom: 10px; padding: 0px; }
+p { padding: 0px; margin-top: 16px; margin-bottom: 16px; }
+h1 { font-size: 36px; }
+h2 { font-size: 30px; }
+h3 { font-size: 26px; }
+h4 { font-size: 22px; }
+h5 { font-size: 20px; }
+h6 { font-size: 18px; }
+a { color: rgb(0, 153, 255); margin: 0px; padding: 0px; vertical-align: baseline; text-decoration: none; word-break: break-all; }
+a:hover { text-decoration: underline; color: rgb(255, 102, 0); }
+a:visited { color: purple; }
+ul, ol { padding: 0px 0px 0px 24px; }
+li { line-height: 24px; }
+li ul, li ol { margin-left: 16px; }
+p, ul, ol { font-size: 16px; line-height: 24px; }
+pre { display: block; overflow-y: hidden; overflow-x: auto; }
+code { font-family: Consolas, Monaco, monospace, Courier; font-size: 16px; color: rgb(142, 36, 170); word-break: break-all; }
+pre code { display: block; overflow-x: auto; padding: 0.5em; color: rgb(34, 34, 34); background-color: rgb(224, 224, 224); line-height: 1.5; font-family: Consolas, Monaco, monospace, Courier; white-space: pre; }
+aside { display: block; float: right; width: 390px; }
+blockquote { color: rgb(102, 102, 102); border-left: 0.5em solid rgb(122, 122, 122); padding: 0px 2em; margin-left: 0px; }
+blockquote p { color: rgb(102, 102, 102); }
+hr { display: block; text-align: left; margin: 1em 0px; border: none; height: 2px; background: rgb(153, 153, 153); }
+table { padding: 0px; border-collapse: collapse; }
+table tr { border-top: 1px solid rgb(204, 204, 204); background-color: white; margin: 0px; padding: 0px; }
+table tr:nth-child(2n) { background-color: rgb(248, 248, 248); }
+table tr th { font-weight: bold; border: 1px solid rgb(204, 204, 204); margin: 0px; padding: 6px 13px; }
+table tr td { border: 1px solid rgb(204, 204, 204); margin: 0px; padding: 6px 13px; }
+table tr th :first-child, table tr td :first-child { margin-top: 0px; }
+table tr th :last-child, table tr td :last-child { margin-bottom: 0px; }
+div.mermaid-diagram { overflow-y: hidden; }
+div.flowchart-diagram { overflow-y: hidden; }
+.img-package { text-align: center; }
+img.img-center { display: block; margin-left: auto; margin-right: auto; }
+div.img-caption { min-width: 20%; max-width: 80%; display: inline-block; padding: 10px; margin: 0px auto; border-bottom: 1px solid rgb(192, 192, 192); color: rgb(108, 108, 108); text-align: center; line-height: 1.5; }
+table.hljs-ln tr { border: none; background-color: transparent; }
+table.hljs-ln tr td { border: none; background-color: transparent; }
+table.hljs-ln tr td.hljs-ln-numbers { user-select: none; text-align: center; color: rgb(170, 170, 170); border-right: 1px solid rgb(204, 204, 204); vertical-align: top; padding-right: 5px; white-space: nowrap; }
+table.hljs-ln tr td.hljs-ln-code { padding-left: 10px; }
+::-webkit-scrollbar { background-color: rgb(234, 234, 234); width: 14px; height: 14px; border: none; }
+::-webkit-scrollbar-corner { background-color: rgb(234, 234, 234); }
+::-webkit-scrollbar-button { height: 14px; width: 14px; background-color: rgb(234, 234, 234); }
+::-webkit-scrollbar-button:hover { background-color: rgb(208, 208, 208); }
+::-webkit-scrollbar-button:active { background-color: rgb(178, 178, 178); }
+::-webkit-scrollbar-track { background-color: rgb(234, 234, 234); }
+::-webkit-scrollbar-thumb { border: none; background-color: rgb(218, 218, 218); }
+::-webkit-scrollbar-thumb:hover { background-color: rgb(208, 208, 208); }
+::-webkit-scrollbar-thumb:active { background-color: rgb(178, 178, 178); }
+::-webkit-scrollbar-button:horizontal:increment { background-image: url("./03_ArduinoC概述与数据类型_001_files/right.svg"); background-repeat: no-repeat; background-size: contain; }
+::-webkit-scrollbar-button:horizontal:decrement { background-image: url("./03_ArduinoC概述与数据类型_001_files/left.svg"); background-repeat: no-repeat; background-size: contain; }
+::-webkit-scrollbar-button:vertical:increment { background-image: url("./03_ArduinoC概述与数据类型_001_files/down.svg"); background-repeat: no-repeat; background-size: contain; }
+::-webkit-scrollbar-button:vertical:decrement { background-image: url("./03_ArduinoC概述与数据类型_001_files/up.svg"); background-repeat: no-repeat; background-size: contain; }
+.hljs { display: block; overflow-x: auto; padding: 0.5em; color: rgb(171, 178, 191); background: rgb(44, 49, 58); }
+.hljs-comment, .hljs-quote { color: rgb(92, 99, 112); font-style: italic; }
+.hljs-doctag, .hljs-keyword, .hljs-formula { color: rgb(198, 120, 221); }
+.hljs-section, .hljs-name, .hljs-selector-tag, .hljs-deletion, .hljs-subst { color: rgb(224, 108, 117); }
+.hljs-literal { color: rgb(86, 182, 194); }
+.hljs-string, .hljs-regexp, .hljs-addition, .hljs-attribute, .hljs-meta-string { color: rgb(152, 195, 121); }
+.hljs-built_in, .hljs-class .hljs-title { color: rgb(230, 192, 123); }
+.hljs-attr, .hljs-variable, .hljs-template-variable, .hljs-type, .hljs-selector-class, .hljs-selector-attr, .hljs-selector-pseudo, .hljs-number { color: rgb(209, 154, 102); }
+.hljs-symbol, .hljs-bullet, .hljs-link, .hljs-meta, .hljs-selector-id, .hljs-title { color: rgb(97, 174, 238); }
+.hljs-emphasis { font-style: italic; }
+.hljs-strong { font-weight: bold; }
+.hljs-link { text-decoration: underline; }
+.hljs-ln { border-collapse: collapse; }
+.hljs-ln td { padding: 0px; }
+.hljs-ln-n::before { content: attr(data-line-number); }
+.MathJax_Hover_Frame { border-radius: 0.25em; box-shadow: rgb(136, 51, 170) 0px 0px 15px; display: inline-block; position: absolute; border: 1px solid rgb(170, 102, 221) !important; }
+.MathJax_Menu_Button .MathJax_Hover_Arrow { position: absolute; cursor: pointer; display: inline-block; border: 2px solid rgb(170, 170, 170); border-radius: 4px; font-family: "Courier New", Courier; font-size: 9px; color: rgb(240, 240, 240); }
+.MathJax_Menu_Button .MathJax_Hover_Arrow span { display: block; background-color: rgb(170, 170, 170); border: 1px solid; border-radius: 3px; line-height: 0; padding: 4px; }
+.MathJax_Hover_Arrow:hover { color: white !important; border: 2px solid rgb(204, 204, 204) !important; }
+.MathJax_Hover_Arrow:hover span { background-color: rgb(204, 204, 204) !important; }
+#MathJax_About { position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: rgb(221, 221, 221); color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0px; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; box-shadow: rgb(128, 128, 128) 0px 10px 20px; }
+#MathJax_About.MathJax_MousePost { outline: none; }
+.MathJax_Menu { position: absolute; background-color: white; color: black; width: auto; padding: 2px; border: 1px solid rgb(204, 204, 204); margin: 0px; cursor: default; font-style: normal; font-weight: normal; font-size: 12px; font-family: "Microsoft YaHei UI"; font-stretch: normal; font-variant: normal; text-align: left; text-indent: 0px; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; box-shadow: rgb(128, 128, 128) 0px 10px 20px; }
+.MathJax_MenuItem { padding: 2px 2em; background: transparent; }
+.MathJax_MenuArrow { position: absolute; right: 0.5em; padding-top: 0.25em; color: rgb(102, 102, 102); font-size: 0.75em; }
+.MathJax_MenuActive .MathJax_MenuArrow { color: white; }
+.MathJax_MenuArrow.RTL { left: 0.5em; right: auto; }
+.MathJax_MenuCheck { position: absolute; left: 0.7em; }
+.MathJax_MenuCheck.RTL { right: 0.7em; left: auto; }
+.MathJax_MenuRadioCheck { position: absolute; left: 1em; }
+.MathJax_MenuRadioCheck.RTL { right: 1em; left: auto; }
+.MathJax_MenuLabel { padding: 2px 2em 4px 1.33em; font-style: italic; }
+.MathJax_MenuRule { border-top: 1px solid rgb(204, 204, 204); margin: 4px 1px 0px; }
+.MathJax_MenuDisabled { color: graytext; }
+.MathJax_MenuActive { background-color: highlight; color: highlighttext; }
+.MathJax_MenuDisabled:focus, .MathJax_MenuLabel:focus { background-color: rgb(232, 232, 232); }
+.MathJax_ContextMenu:focus { outline: none; }
+.MathJax_ContextMenu .MathJax_MenuItem:focus { outline: none; }
+#MathJax_AboutClose { top: 0.2em; right: 0.2em; }
+.MathJax_Menu .MathJax_MenuClose { top: -10px; left: -10px; }
+.MathJax_MenuClose { position: absolute; cursor: pointer; display: inline-block; border: 2px solid rgb(170, 170, 170); border-radius: 18px; font-family: "Courier New", Courier; font-size: 24px; color: rgb(240, 240, 240); }
+.MathJax_MenuClose span { display: block; background-color: rgb(170, 170, 170); border: 1.5px solid; border-radius: 18px; line-height: 0; padding: 8px 0px 6px; }
+.MathJax_MenuClose:hover { color: white !important; border: 2px solid rgb(204, 204, 204) !important; }
+.MathJax_MenuClose:hover span { background-color: rgb(204, 204, 204) !important; }
+.MathJax_MenuClose:hover:focus { outline: none; }
+.MathJax_Preview .MJXf-math { color: inherit !important; }
+.MJX_Assistive_MathML { top: 0px; left: 0px; clip: rect(1px 1px 1px 1px); user-select: none; position: absolute !important; padding: 1px 0px 0px !important; border: 0px !important; height: 1px !important; width: 1px !important; overflow: hidden !important; display: block !important; }
+.MJX_Assistive_MathML.MJX_Assistive_MathML_Block { width: 100% !important; }
+#MathJax_Zoom { position: absolute; background-color: rgb(240, 240, 240); overflow: auto; display: block; z-index: 301; padding: 0.5em; border: 1px solid black; margin: 0px; font-weight: normal; font-style: normal; text-align: left; text-indent: 0px; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; box-sizing: content-box; box-shadow: rgb(170, 170, 170) 5px 5px 15px; }
+#MathJax_ZoomOverlay { position: absolute; left: 0px; top: 0px; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0px; padding: 0px; margin: 0px; background-color: white; opacity: 0; }
+#MathJax_ZoomFrame { position: relative; display: inline-block; height: 0px; width: 0px; }
+#MathJax_ZoomEventTrap { position: absolute; left: 0px; top: 0px; z-index: 302; display: inline-block; border: 0px; padding: 0px; margin: 0px; background-color: white; opacity: 0; }
+.MathJax_Preview { color: rgb(136, 136, 136); }
+#MathJax_Message { position: fixed; left: 1px; bottom: 2px; background-color: rgb(230, 230, 230); border: 1px solid rgb(149, 149, 149); margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap; }
+#MathJax_MSIE_Frame { position: absolute; top: 0px; left: 0px; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px; }
+.MathJax_Error { color: rgb(204, 0, 0); font-style: italic; }
+.MJXp-script { font-size: 0.8em; }
+.MJXp-right { transform-origin: right center 0px; }
+.MJXp-bold { font-weight: bold; }
+.MJXp-italic { font-style: italic; }
+.MJXp-scr { font-family: MathJax_Script, "Times New Roman", Times, STIXGeneral, serif; }
+.MJXp-frak { font-family: MathJax_Fraktur, "Times New Roman", Times, STIXGeneral, serif; }
+.MJXp-sf { font-family: MathJax_SansSerif, "Times New Roman", Times, STIXGeneral, serif; }
+.MJXp-cal { font-family: MathJax_Caligraphic, "Times New Roman", Times, STIXGeneral, serif; }
+.MJXp-mono { font-family: MathJax_Typewriter, "Times New Roman", Times, STIXGeneral, serif; }
+.MJXp-largeop { font-size: 150%; }
+.MJXp-largeop.MJXp-int { vertical-align: -0.2em; }
+.MJXp-math { display: inline-block; line-height: 1.2; text-indent: 0px; font-family: "Times New Roman", Times, STIXGeneral, serif; white-space: nowrap; border-collapse: collapse; }
+.MJXp-display { display: block; text-align: center; margin: 1em 0px; }
+.MJXp-math span { display: inline-block; }
+.MJXp-box { text-align: center; display: block !important; }
+.MJXp-box::after { content: " "; }
+.MJXp-rule { margin-top: 0.1em; display: block !important; }
+.MJXp-char { display: block !important; }
+.MJXp-mo { margin: 0px 0.15em; }
+.MJXp-mfrac { margin: 0px 0.125em; vertical-align: 0.25em; }
+.MJXp-denom { width: 100%; display: inline-table !important; }
+.MJXp-denom > * { display: table-row !important; }
+.MJXp-surd { vertical-align: top; }
+.MJXp-surd > * { display: block !important; }
+.MJXp-script-box > * { height: 50%; display: table !important; }
+.MJXp-script-box > * > * { vertical-align: top; display: table-cell !important; }
+.MJXp-script-box > :last-child > * { vertical-align: bottom; }
+.MJXp-script-box > * > * > * { display: block !important; }
+.MJXp-mphantom { visibility: hidden; }
+.MJXp-munderover { display: inline-table !important; }
+.MJXp-over { text-align: center; display: inline-block !important; }
+.MJXp-over > * { display: block !important; }
+.MJXp-munderover > * { display: table-row !important; }
+.MJXp-mtable { vertical-align: 0.25em; margin: 0px 0.125em; }
+.MJXp-mtable > * { vertical-align: middle; display: inline-table !important; }
+.MJXp-mtr { display: table-row !important; }
+.MJXp-mtd { text-align: center; padding: 0.5em 0px 0px 0.5em; display: table-cell !important; }
+.MJXp-mtr > .MJXp-mtd:first-child { padding-left: 0px; }
+.MJXp-mtr:first-child > .MJXp-mtd { padding-top: 0px; }
+.MJXp-mlabeledtr { display: table-row !important; }
+.MJXp-mlabeledtr > .MJXp-mtd:first-child { padding-left: 0px; }
+.MJXp-mlabeledtr:first-child > .MJXp-mtd { padding-top: 0px; }
+.MJXp-merror { background-color: rgb(255, 255, 136); color: rgb(204, 0, 0); border: 1px solid rgb(204, 0, 0); padding: 1px 3px; font-style: normal; font-size: 90%; }
+.MJXp-scale0 { transform: scaleX(0); }
+.MJXp-scale1 { transform: scaleX(0.1); }
+.MJXp-scale2 { transform: scaleX(0.2); }
+.MJXp-scale3 { transform: scaleX(0.3); }
+.MJXp-scale4 { transform: scaleX(0.4); }
+.MJXp-scale5 { transform: scaleX(0.5); }
+.MJXp-scale6 { transform: scaleX(0.6); }
+.MJXp-scale7 { transform: scaleX(0.7); }
+.MJXp-scale8 { transform: scaleX(0.8); }
+.MJXp-scale9 { transform: scaleX(0.9); }
+.MathJax_PHTML .noError { font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid; }
+.MathJax_Display { text-align: center; margin: 1em 0em; position: relative; text-indent: 0px; max-width: none; max-height: none; min-width: 0px; min-height: 0px; width: 100%; display: block !important; }
+.MathJax .merror { background-color: rgb(255, 255, 136); color: rgb(204, 0, 0); border: 1px solid rgb(204, 0, 0); padding: 1px 3px; font-style: normal; font-size: 90%; }
+.MathJax .MJX-monospace { font-family: monospace; }
+.MathJax .MJX-sans-serif { font-family: sans-serif; }
+#MathJax_Tooltip { background-color: infobackground; color: infotext; border: 1px solid black; box-shadow: rgb(170, 170, 170) 2px 2px 5px; padding: 3px 4px; z-index: 401; position: absolute; left: 0px; top: 0px; width: auto; height: auto; display: none; }
+.MathJax { display: inline; font-style: normal; font-weight: normal; line-height: normal; font-size: 100%; text-indent: 0px; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0px; min-height: 0px; border: 0px; padding: 0px; margin: 0px; }
+.MathJax:focus, body :focus .MathJax { display: inline-table; }
+.MathJax.MathJax_FullWidth { text-align: center; display: table-cell !important; width: 10000em !important; }
+.MathJax img, .MathJax nobr, .MathJax a { border: 0px; padding: 0px; margin: 0px; max-width: 5000em; max-height: 5000em; min-width: 0px; min-height: 0px; vertical-align: 0px; line-height: normal; text-decoration: none; }
+img.MathJax_strut { border: 0px !important; padding: 0px !important; margin: 0px !important; vertical-align: 0px !important; }
+.MathJax span { display: inline; position: static; border: 0px; padding: 0px; margin: 0px; vertical-align: 0px; line-height: normal; text-decoration: none; }
+.MathJax nobr { white-space: nowrap !important; }
+.MathJax img { display: inline !important; float: none !important; }
+.MathJax * { transition: none; }
+.MathJax_Processing { visibility: hidden; position: fixed; width: 0px; height: 0px; overflow: hidden; }
+.MathJax_Processed { display: none !important; }
+.MathJax_ExBox { overflow: hidden; width: 1px; height: 60ex; min-height: 0px; max-height: none; display: block !important; }
+.MathJax .MathJax_EmBox { overflow: hidden; width: 1px; height: 60em; min-height: 0px; max-height: none; display: block !important; }
+.MathJax_LineBox { display: table !important; }
+.MathJax_LineBox span { min-width: 0px; max-width: none; padding: 0px; border: 0px; margin: 0px; display: table-cell !important; width: 10000em !important; }
+.MathJax .MathJax_HitBox { cursor: text; background: white; opacity: 0; }
+.MathJax .MathJax_HitBox * { filter: none; opacity: 1; background: transparent; }
+#MathJax_Tooltip * { filter: none; opacity: 1; background: transparent; }
+@font-face { font-family: MathJax_Main; src: url("https://cdn.bootcss.com/mathjax/2.7.2/fonts/HTML-CSS/TeX/woff/MathJax_Main-Regular.woff?V=2.7.2") format("woff"), url("https://cdn.bootcss.com/mathjax/2.7.2/fonts/HTML-CSS/TeX/otf/MathJax_Main-Regular.otf?V=2.7.2") format("opentype"); }
+@font-face { font-family: MathJax_Main-bold; src: url("https://cdn.bootcss.com/mathjax/2.7.2/fonts/HTML-CSS/TeX/woff/MathJax_Main-Bold.woff?V=2.7.2") format("woff"), url("https://cdn.bootcss.com/mathjax/2.7.2/fonts/HTML-CSS/TeX/otf/MathJax_Main-Bold.otf?V=2.7.2") format("opentype"); }
+@font-face { font-family: MathJax_Main-italic; src: url("https://cdn.bootcss.com/mathjax/2.7.2/fonts/HTML-CSS/TeX/woff/MathJax_Main-Italic.woff?V=2.7.2") format("woff"), url("https://cdn.bootcss.com/mathjax/2.7.2/fonts/HTML-CSS/TeX/otf/MathJax_Main-Italic.otf?V=2.7.2") format("opentype"); }
+@font-face { font-family: MathJax_Math-italic; src: url("https://cdn.bootcss.com/mathjax/2.7.2/fonts/HTML-CSS/TeX/woff/MathJax_Math-Italic.woff?V=2.7.2") format("woff"), url("https://cdn.bootcss.com/mathjax/2.7.2/fonts/HTML-CSS/TeX/otf/MathJax_Math-Italic.otf?V=2.7.2") format("opentype"); }
+@font-face { font-family: MathJax_Caligraphic; src: url("https://cdn.bootcss.com/mathjax/2.7.2/fonts/HTML-CSS/TeX/woff/MathJax_Caligraphic-Regular.woff?V=2.7.2") format("woff"), url("https://cdn.bootcss.com/mathjax/2.7.2/fonts/HTML-CSS/TeX/otf/MathJax_Caligraphic-Regular.otf?V=2.7.2") format("opentype"); }
+@font-face { font-family: MathJax_Size1; src: url("https://cdn.bootcss.com/mathjax/2.7.2/fonts/HTML-CSS/TeX/woff/MathJax_Size1-Regular.woff?V=2.7.2") format("woff"), url("https://cdn.bootcss.com/mathjax/2.7.2/fonts/HTML-CSS/TeX/otf/MathJax_Size1-Regular.otf?V=2.7.2") format("opentype"); }
+@font-face { font-family: MathJax_Size2; src: url("https://cdn.bootcss.com/mathjax/2.7.2/fonts/HTML-CSS/TeX/woff/MathJax_Size2-Regular.woff?V=2.7.2") format("woff"), url("https://cdn.bootcss.com/mathjax/2.7.2/fonts/HTML-CSS/TeX/otf/MathJax_Size2-Regular.otf?V=2.7.2") format("opentype"); }
+@font-face { font-family: MathJax_Size3; src: url("https://cdn.bootcss.com/mathjax/2.7.2/fonts/HTML-CSS/TeX/woff/MathJax_Size3-Regular.woff?V=2.7.2") format("woff"), url("https://cdn.bootcss.com/mathjax/2.7.2/fonts/HTML-CSS/TeX/otf/MathJax_Size3-Regular.otf?V=2.7.2") format("opentype"); }
+@font-face { font-family: MathJax_Size4; src: url("https://cdn.bootcss.com/mathjax/2.7.2/fonts/HTML-CSS/TeX/woff/MathJax_Size4-Regular.woff?V=2.7.2") format("woff"), url("https://cdn.bootcss.com/mathjax/2.7.2/fonts/HTML-CSS/TeX/otf/MathJax_Size4-Regular.otf?V=2.7.2") format("opentype"); }
+.MathJax .noError { font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid; }
+
+    </style>
+
+    <!-- EXTRA_PLACE_HOLDER -->
+
+<!-- HEAD_PLACE_HOLDER -->
+</head>
+<body>
+<blockquote>
+<p>实验器材：Arduino UNO(1)，面包板(1)，电阻(10kΩ(1，下拉电阻)、100Ω(1，限流电阻))，LED灯(1)，按键开关(1)</p>
+</blockquote>
+<h1 id="toc_0"><a name="toc_0" class="vnote-anchor" href="#"></a>03_ArduinoC概述与数据类型</h1>
+<p>C是一种通用的编程语言，广泛用于系统软件与应用软件的开发。于1969年至1973年间，为了移植与开发UNIX操作系统，由丹尼斯·里奇与肯·汤普逊，以B语言为基础，在贝尔实验室设计、开发出来。</p>
+<p>C语言具有高效、灵活、功能丰富、表达力强和较高的可移植性等特点，在程序员中备受青睐，成为最近25年使用最为广泛的编程语言[2]。目前，C语言编译器普遍存在于各种不同的操作系统中，例如Microsoft Windows、macOS、Linux、Unix等。C语言的设计影响了众多后来的编程语言，例如C++、Objective-C、Java、C#等。</p>
+<p>二十世纪八十年代，为了避免各开发厂商用的C语言语法产生差异，由美国国家标准局（American National Standard Institute）为C语言订定了一套完整的国际标准语法，称为ANSI C，作为C语言的标准。二十世纪八十年代至今的有关程序开发工具，一般都支持匹配ANSI C的语法。</p>
+<p>C语言设计目标是提供一种能以简易的方式编译、处理低级存储器、产生少量的机器码以及不需要任何运行环境支持便能运行的编程语言。C语言也很适合搭配汇编语言来使用。尽管C语言提供许多低级处理的功能，但仍保持良好跨平台的特性，以一个标准规格写出的C语言程序可在许多电脑平台上进行编译，甚至包含一些嵌入式处理器（微控制器或称MCU）以及超级电脑等作业平台。</p>
+<p>(引自<a href="https://zh.wikipedia.org/wiki/C%E8%AF%AD%E8%A8%80">wiki-C语言</a>:<a href="https://zh.wikipedia.org/wiki/C%E8%AF%AD%E8%A8%80">https://zh.wikipedia.org/wiki/C语言</a>)</p>
+<p><strong>Arduino C是C的子集。</strong></p>
+<h2 id="toc_1"><a name="toc_1" class="vnote-anchor" href="#"></a>通过一个实验程序理解C语言基本结构</h2>
+<h3 id="toc_2"><a name="toc_2" class="vnote-anchor" href="#"></a>实验程序(按键、LED灯)</h3>
+<pre><code class="lang-C hljs"><table class="hljs-ln"><tbody><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="1"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line"><span class="hljs-comment">/*</span></div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="2"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">  Button</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="3"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line"> </div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="4"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">  Turns on and off a light emitting diode(LED) connected to digital pin 13,</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="5"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">  when pressing a pushbutton attached to pin 2.</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="6"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line"> </div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="7"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">  The circuit:</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="8"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">  - LED attached from pin 13 to ground</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="9"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">  - pushbutton attached to pin 2 from +5V</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="10"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">  - 10K resistor attached to pin 2 from ground</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="11"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line"> </div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="12"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">  - Note: on most Arduinos there is already an LED on the board</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="13"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">    attached to pin 13.</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="14"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line"> </div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="15"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">  created 2005</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="16"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">  by DojoDave &lt;http://www.0j0.org&gt;</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="17"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">  modified 30 Aug 2011</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="18"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">  by Tom Igoe</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="19"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line"> </div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="20"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">  This example code is in the public domain.</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="21"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line"> </div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="22"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">  http://www.arduino.cc/en/Tutorial/Button</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="23"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">*/</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="24"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line"> </div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="25"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line"><span class="hljs-comment">// constants won't change. They're used here to set pin numbers:</span></div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="26"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line"><span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> buttonPin = <span class="hljs-number">2</span>;     <span class="hljs-comment">// the number of the pushbutton pin</span></div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="27"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line"><span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> ledPin =  <span class="hljs-number">12</span>;      <span class="hljs-comment">// the number of the LED pin</span></div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="28"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line"> </div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="29"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line"><span class="hljs-comment">// variables will change:</span></div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="30"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line"><span class="hljs-keyword">int</span> buttonState = <span class="hljs-number">0</span>;         <span class="hljs-comment">// variable for reading the pushbutton status</span></div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="31"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line"><span class="hljs-keyword">int</span> counter=<span class="hljs-number">0</span>; <span class="hljs-comment">//按键计数</span></div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="32"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line"> </div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="33"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">setup</span><span class="hljs-params">()</span> </span>{</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="34"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">  Serial.begin(<span class="hljs-number">9600</span>); <span class="hljs-comment">//打开串口</span></div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="35"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">  <span class="hljs-comment">// initialize the LED pin as an output:</span></div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="36"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">  pinMode(ledPin, OUTPUT);</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="37"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">  <span class="hljs-comment">// initialize the pushbutton pin as an input:</span></div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="38"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">  pinMode(buttonPin, INPUT);  </div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="39"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">}</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="40"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line"> </div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="41"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">loop</span><span class="hljs-params">()</span> </span>{</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="42"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">  <span class="hljs-comment">// read the state of the pushbutton value:</span></div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="43"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">  buttonState = digitalRead(buttonPin);</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="44"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line"> </div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="45"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">  <span class="hljs-comment">// check if the pushbutton is pressed. If it is, the buttonState is HIGH:</span></div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="46"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">  <span class="hljs-keyword">if</span> (buttonState == HIGH) {</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="47"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">    <span class="hljs-comment">// turn LED on:</span></div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="48"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">    digitalWrite(ledPin, HIGH);</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="49"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">    counter++; <span class="hljs-comment">//当按下按键计数+1，counter++相当于counter=counter+1</span></div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="50"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">    Serial.println(counter); <span class="hljs-comment">//串口打印变量counter   </span></div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="51"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">    delay(<span class="hljs-number">500</span>); <span class="hljs-comment">//延迟</span></div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="52"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">  } <span class="hljs-keyword">else</span> {</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="53"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">    <span class="hljs-comment">// turn LED off:</span></div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="54"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">    digitalWrite(ledPin, LOW);</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="55"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">  }</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="56"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">}</div></td></tr></tbody></table></code></pre>
+<h3 id="toc_3"><a name="toc_3" class="vnote-anchor" href="#"></a>电路图(基于fritzing)</h3>
+<p><img src="./03_ArduinoC概述与数据类型_001_files/_1524796560_9567.jpg" alt=""></p>
+<h3 id="toc_4"><a name="toc_4" class="vnote-anchor" href="#"></a>Arduino C语言基本结构概述</h3>
+<p><img src="./03_ArduinoC概述与数据类型_001_files/_1524803911_19269.jpg" alt="">
+<strong>通过该实验程序应该获知的知识内容：</strong></p>
+<ol>
+<li>程序注释：/<em>…</em>/,//</li>
+<li>语句块： {…;}，左大括号开始，右大括号结束</li>
+<li>函数块:返回值类型 函数名（参数名）{…;}</li>
+<li>setup()与loop()函数</li>
+<li>数据定义(定义变量):"="赋值运算符</li>
+<li>符号常量</li>
+<li>串口通信：Serial.begin(波特率)，Serial.print(),Serial.println()</li>
+<li>表达式：操作符Operands+运算符Operators</li>
+</ol>
+<h3 id="toc_5"><a name="toc_5" class="vnote-anchor" href="#"></a>运算符优先级</h3>
+<table>
+<thead>
+<tr>
+<th>优先级</th>
+<th>运算符</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>( ) [ ] -&gt; .(dot)</td>
+</tr>
+<tr>
+<td>2</td>
+<td>!  ~ ++ – +(unary) -(unary) *(indirection) &amp;(address of )(cast) sizeof</td>
+</tr>
+<tr>
+<td>3</td>
+<td>*(multiplication)，/，%</td>
+</tr>
+<tr>
+<td>4</td>
+<td>+(binary)，-(binary)</td>
+</tr>
+<tr>
+<td>5</td>
+<td>&lt;&lt; &gt;&gt;</td>
+</tr>
+<tr>
+<td>6</td>
+<td>&lt; &lt;= &gt; &gt;=</td>
+</tr>
+<tr>
+<td>7</td>
+<td>== !=</td>
+</tr>
+<tr>
+<td>8</td>
+<td>&amp;(bitwise AND)</td>
+</tr>
+<tr>
+<td>9</td>
+<td>^</td>
+</tr>
+<tr>
+<td>10</td>
+<td></td>
+</tr>
+<tr>
+<td>11</td>
+<td>&amp;&amp;</td>
+</tr>
+<tr>
+<td>12</td>
+<td></td>
+</tr>
+<tr>
+<td>13</td>
+<td>?:</td>
+</tr>
+<tr>
+<td>14</td>
+<td>= +=  -= *= /= %= &amp;= ^=</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>注：true为非0值；false为0值。
+好的变量名和函数名非常重要，尽量反应所定义对象的含义内容，常规：myFunciton/my_function。</p>
+</blockquote>
+<h3 id="toc_6"><a name="toc_6" class="vnote-anchor" href="#"></a>自增/自减运算符</h3>
+<p>前自增/自减：++counter/–counter  增减1后用于表达式
+后自增/自减：counte++r/counter--  用于表达式后增减1</p>
+<h2 id="toc_7"><a name="toc_7" class="vnote-anchor" href="#"></a>Arduino C数据类型</h2>
+<p>Arduino C支持大多数ANSI C数据类型。变量实际上就是内存中的一片区域，只是具有一个名称。根据数据类型，直接决定为这个变量分配多少字节的内存空间，以及何种类型的数据剋存储于该变量中。注意C语言中与python的不同之处，python不需自行定义变量类型。</p>
+<h3 id="toc_8"><a name="toc_8" class="vnote-anchor" href="#"></a>Arduino C的值数据类型<a href="https://www.arduino.cc/reference/en/">Data Types</a>**</h3>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>字节长度</th>
+<th>值范围</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>boolean</td>
+<td>1</td>
+<td>仅限于逻辑true和false</td>
+</tr>
+<tr>
+<td>char</td>
+<td>1</td>
+<td>-128~+127</td>
+</tr>
+<tr>
+<td>unsigned char</td>
+<td>1</td>
+<td>0~255</td>
+</tr>
+<tr>
+<td>byte</td>
+<td>1</td>
+<td>0~255</td>
+</tr>
+<tr>
+<td>int</td>
+<td>2</td>
+<td>-32 768~32 768</td>
+</tr>
+<tr>
+<td>unsigned int</td>
+<td>2</td>
+<td>0~65 535</td>
+</tr>
+<tr>
+<td>word</td>
+<td>2</td>
+<td>0~ 65 535</td>
+</tr>
+<tr>
+<td>long</td>
+<td>4</td>
+<td>-2 147 483 648~ 147 483 648</td>
+</tr>
+<tr>
+<td>unsigned long</td>
+<td>4</td>
+<td>0 ~ 4 294 967 295</td>
+</tr>
+<tr>
+<td>float</td>
+<td>4</td>
+<td>-3.0428235E+38 ~3.0428235W+38</td>
+</tr>
+<tr>
+<td>double</td>
+<td>4</td>
+<td>-3.0428235E+38 ~3.0428235W+38</td>
+</tr>
+<tr>
+<td>string</td>
+<td>?</td>
+<td>以"\0" 结束</td>
+</tr>
+<tr>
+<td>String</td>
+<td>?</td>
+<td>由字符数组构建的数据类型，以空字符("\0")结束</td>
+</tr>
+<tr>
+<td>void</td>
+<td>0</td>
+<td>以变量名引用的某类型数据序列</td>
+</tr>
+</tbody>
+</table>
+<h3 id="toc_9"><a name="toc_9" class="vnote-anchor" href="#"></a>存储器常用单位</h3>
+<p><img src="./03_ArduinoC概述与数据类型_001_files/_1524811461_23983.jpg" alt=""></p>
+<blockquote>
+<p>二进制每左移一位，相当于原数乘以了2；每右移一位，相当于原数除以了2。位移只能用于整形数据。</p>
+</blockquote>
+<h3 id="toc_10"><a name="toc_10" class="vnote-anchor" href="#"></a>boolean数据类型</h3>
+<p>true(0)/false(非0)，例如存储开关的状态。</p>
+<h3 id="toc_11"><a name="toc_11" class="vnote-anchor" href="#"></a>char数据类型</h3>
+<p>存储8bit字符，含无符号和有符号。
+<a href="https://www.asciitable.com/">ascii table</a>  <a href="https://zh.wikipedia.org/wiki/ASCII">wiki ascii</a>
+<img src="./03_ArduinoC概述与数据类型_001_files/_1524812130_17464.png" alt=""></p>
+<p>ASCII（发音： /ˈæski/ ass-kee[1]，American Standard Code for Information Interchange，美国信息交换标准代码）是基于拉丁字母的一套电脑编码系统。它主要用于显示现代英语，而其扩展版本EASCII则可以部分支持其他西欧语言，并等同于国际标准ISO/IEC 646。</p>
+<p>ASCII第一次以规范标准的类型发表是在1967年，最后一次更新则是在1986年，至今为止共定义了128个字符；其中33个字符无法显示（一些终端提供了扩展，使得这些字符可显示为诸如笑脸、扑克牌花式等8-bit符号），且这33个字符多数都已是陈废的控制字符。控制字符的用途主要是用来操控已经处理过的文字。在33个字符之外的是95个可显示的字符。用键盘敲下空白键所产生的空白字符也算1个可显示字符（显示为空白）。</p>
+<p><a href="https://zh.wikipedia.org/wiki/Unicode">Unicode wiki</a></p>
+<p>Unicode（中文：万国码、国际码、统一码、单一码）是计算机科学领域里的一项业界标准。它对世界上大部分的文字系统进行了整理、编码，使得电脑可以用更为简单的方式来呈现和处理文字。</p>
+<p>Unicode伴随着通用字符集的标准而发展，同时也以书本的形式[1]对外发表。Unicode至今仍在不断增修，每个新版本都加入更多新的字符。目前最新的版本为2017年6月20日公布的10.0.0[2]，已经收录超过十万个字符（第十万个字符在2005年获采纳）。Unicode涵盖的数据除了视觉上的字形、编码方法、标准的字符编码外，还包含了字符特性，如大小写字母。</p>
+<p>Unicode发展由非营利机构统一码联盟负责，该机构致力于让Unicode方案取代既有的字符编码方案。因为既有的方案往往空间非常有限，亦不适用于多语环境。</p>
+<p>Unicode备受认可，并广泛地应用于电脑软件的国际化与本地化过程。有很多新科技，如可扩展置标语言（Extensible Markup Language，简称：XML）、Java编程语言以及现代的操作系统，都采用Unicode编码。</p>
+<p><strong>Arduino C生成ASCII字符表</strong></p>
+<blockquote>
+<p>arduino 案例自带 ASCIITable</p>
+</blockquote>
+<pre><code class="lang-C hljs"><table class="hljs-ln"><tbody><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="1"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line"><span class="hljs-comment">/*</span></div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="2"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">  ASCII table</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="3"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line"> </div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="4"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">  Prints out byte values in all possible formats:</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="5"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">  - as raw binary values</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="6"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">  - as ASCII-encoded decimal, hex, octal, and binary values</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="7"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line"> </div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="8"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">  For more on ASCII, see http://www.asciitable.com and http://en.wikipedia.org/wiki/ASCII</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="9"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line"> </div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="10"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">  The circuit: No external hardware needed.</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="11"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line"> </div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="12"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">  created 2006</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="13"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">  by Nicholas Zambetti &lt;http://www.zambetti.com&gt;</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="14"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">  modified 9 Apr 2012</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="15"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">  by Tom Igoe</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="16"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line"> </div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="17"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">  This example code is in the public domain.</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="18"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line"> </div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="19"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">  http://www.arduino.cc/en/Tutorial/ASCIITable</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="20"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">*/</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="21"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line"> </div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="22"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">setup</span><span class="hljs-params">()</span> </span>{</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="23"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">  <span class="hljs-comment">//Initialize serial and wait for port to open:</span></div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="24"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">  Serial.begin(<span class="hljs-number">9600</span>);</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="25"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">  <span class="hljs-keyword">while</span> (!Serial) {</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="26"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">    ; <span class="hljs-comment">// wait for serial port to connect. Needed for native USB port only</span></div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="27"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">  }</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="28"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line"> </div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="29"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">  <span class="hljs-comment">// prints title with ending line break</span></div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="30"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">  Serial.println(<span class="hljs-string">"ASCII Table ~ Character Map"</span>);</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="31"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">}</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="32"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line"> </div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="33"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line"><span class="hljs-comment">// first visible ASCIIcharacter '!' is number 33:</span></div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="34"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line"><span class="hljs-keyword">int</span> thisByte = <span class="hljs-number">33</span>;</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="35"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line"><span class="hljs-comment">// you can also write ASCII characters in single quotes.</span></div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="36"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line"><span class="hljs-comment">// for example, '!' is the same as 33, so you could also use this:</span></div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="37"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line"><span class="hljs-comment">// int thisByte = '!';</span></div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="38"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line"> </div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="39"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">loop</span><span class="hljs-params">()</span> </span>{</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="40"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">  <span class="hljs-comment">// prints value unaltered, i.e. the raw binary version of the byte.</span></div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="41"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">  <span class="hljs-comment">// The Serial Monitor interprets all bytes as ASCII, so 33, the first number,</span></div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="42"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">  <span class="hljs-comment">// will show up as '!'</span></div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="43"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">  Serial.write(thisByte);</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="44"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line"> </div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="45"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">  Serial.print(<span class="hljs-string">", dec: "</span>);</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="46"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">  <span class="hljs-comment">// prints value as string as an ASCII-encoded decimal (base 10).</span></div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="47"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">  <span class="hljs-comment">// Decimal is the default format for Serial.print() and Serial.println(),</span></div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="48"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">  <span class="hljs-comment">// so no modifier is needed:</span></div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="49"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">  Serial.print(thisByte);</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="50"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">  <span class="hljs-comment">// But you can declare the modifier for decimal if you want to.</span></div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="51"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">  <span class="hljs-comment">// this also works if you uncomment it:</span></div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="52"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line"> </div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="53"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">  <span class="hljs-comment">// Serial.print(thisByte, DEC);</span></div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="54"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line"> </div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="55"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line"> </div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="56"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">  Serial.print(<span class="hljs-string">", hex: "</span>);</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="57"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">  <span class="hljs-comment">// prints value as string in hexadecimal (base 16):</span></div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="58"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">  Serial.print(thisByte, HEX);</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="59"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line"> </div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="60"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">  Serial.print(<span class="hljs-string">", oct: "</span>);</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="61"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">  <span class="hljs-comment">// prints value as string in octal (base 8);</span></div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="62"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">  Serial.print(thisByte, OCT);</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="63"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line"> </div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="64"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">  Serial.print(<span class="hljs-string">", bin: "</span>);</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="65"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">  <span class="hljs-comment">// prints value as string in binary (base 2) also prints ending line break:</span></div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="66"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">  Serial.println(thisByte, BIN);</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="67"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line"> </div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="68"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">  <span class="hljs-comment">// if printed last visible character '~' or 126, stop:</span></div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="69"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">  <span class="hljs-keyword">if</span> (thisByte == <span class="hljs-number">126</span>) {    <span class="hljs-comment">// you could also use if (thisByte == '~') {</span></div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="70"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">    <span class="hljs-comment">// This loop loops forever and does nothing</span></div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="71"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">    <span class="hljs-keyword">while</span> (<span class="hljs-literal">true</span>) {</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="72"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">      <span class="hljs-keyword">continue</span>;</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="73"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">    }</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="74"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">  }</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="75"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">  <span class="hljs-comment">// go on to the next character</span></div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="76"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">  thisByte++;</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="77"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">}</div></td></tr></tbody></table></code></pre>
+<h3 id="toc_12"><a name="toc_12" class="vnote-anchor" href="#"></a>byte数据类型</h3>
+<p>可以用byte数据类型存储任何位于0~255之间的数。如果内存空间不够，可尝试将int数据类型改为byte。</p>
+<h3 id="toc_13"><a name="toc_13" class="vnote-anchor" href="#"></a>int数据类型</h3>
+<p>整型数据类型不允许包含小数值。运算过程中如果产生小数，小数将被截断。</p>
+<h3 id="toc_14"><a name="toc_14" class="vnote-anchor" href="#"></a>word数据类型</h3>
+<p>“word”术语来源于汇编语言程序，表示单个CPU指令可以处理的最大比特组，通常用于与位操作或者十六进制数操作相关内容。</p>
+<h3 id="toc_15"><a name="toc_15" class="vnote-anchor" href="#"></a>long数据类型</h3>
+<p>一种整型数据，不能用于分数后者小数值。long会带来不易察觉的性能损耗，在高强度循环程序中，注意合理使用数据类型。</p>
+<h3 id="toc_16"><a name="toc_16" class="vnote-anchor" href="#"></a>float和double数据类型</h3>
+<p>此类型可用于小数。但是需要注意，arduino C中最大的浮点精度为7位有效数字，因此虽然浮点数支持的数据范围高达38位数，但是只有前7位有效，余下的31位由计算机自行决定。</p>
+<p>同时，虽然double数据类型存储空间比float大一倍，但在Arduino C中float和double没有区别。</p>
+<h3 id="toc_17"><a name="toc_17" class="vnote-anchor" href="#"></a>string 数据类型</h3>
+<p>string位一串ASCII字符序列，即字符串。用数组定义字符串。</p>
+<p><span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-1-Frame" tabindex="0" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;><mstyle displaystyle=&quot;true&quot;><mo></mo></mstyle></math>" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-1" style="width: 0em; display: inline-block;"><span style="display: inline-block; position: relative; width: 0em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(3.854em 1000em 4.167em -1000em); top: -4.01em; left: 0em;"><span class="mrow" id="MathJax-Span-2"><span class="mstyle" id="MathJax-Span-3"><span class="mrow" id="MathJax-Span-4"><span class="mo" id="MathJax-Span-5"></span></span></span></span><span style="display: inline-block; width: 0px; height: 4.01em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.063em; border-left: 0px solid; width: 0px; height: 0.125em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mstyle displaystyle="true"><mo></mo></mstyle></math></span></span><script type="math/asciimath" id="MathJax-Element-1"></script>char myString[15] //分配了14个字符空间，末尾一位默认添加空字符("\0")。
+例如：</p>
+<pre><code class="lang-c hljs"><table class="hljs-ln"><tbody><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="1"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line"><span class="hljs-keyword">char</span> name[]=<span class="hljs-string">"digit-x.org"</span>;</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="2"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line"><span class="hljs-keyword">char</span> name[<span class="hljs-number">15</span>]=<span class="hljs-string">"digit-x.org"</span>;</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="3"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line"><span class="hljs-keyword">char</span> name[<span class="hljs-number">100</span>]=<span class="hljs-string">"digit-x.org"</span>; <span class="hljs-comment">//自动填充位空字符</span></div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="4"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line"> </div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="5"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line"><span class="hljs-comment">//以逐字符的方式初始化字符串</span></div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="6"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line"><span class="hljs-keyword">char</span> name[]={<span class="hljs-string">'d'</span>,<span class="hljs-string">'i'</span>,<span class="hljs-string">'g'</span>,<span class="hljs-string">'i'</span>,<span class="hljs-string">'t'</span>,<span class="hljs-string">'-'</span>,<span class="hljs-string">'x'</span>,<span class="hljs-string">'.'</span>,<span class="hljs-string">'o'</span>,<span class="hljs-string">'r'</span>,<span class="hljs-string">'g'</span>,<span class="hljs-string">'\0'</span>};</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="7"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line"><span class="hljs-keyword">char</span> name[]={<span class="hljs-string">'d'</span>,<span class="hljs-string">'i'</span>,<span class="hljs-string">'g'</span>,<span class="hljs-string">'i'</span>,<span class="hljs-string">'t'</span>,<span class="hljs-string">'-'</span>,<span class="hljs-string">'x'</span>,<span class="hljs-string">'.'</span>,<span class="hljs-string">'o'</span>,<span class="hljs-string">'r'</span>,<span class="hljs-string">'g'</span>}; <span class="hljs-comment">//空字符自动补全</span></div></td></tr></tbody></table></code></pre>
+<h3 id="toc_18"><a name="toc_18" class="vnote-anchor" href="#"></a>void</h3>
+<p>用于标识函数没有返回值。</p>
+<h3 id="toc_19"><a name="toc_19" class="vnote-anchor" href="#"></a>array 数组</h3>
+<p><code>int mydata[20]; long workingDays[7]; float temp[200];</code></p>
+<h2 id="toc_20"><a name="toc_20" class="vnote-anchor" href="#"></a>lvalue与rvalue</h2>
+<blockquote>
+<p>结合单片机的存储器来理解，事半功倍。而且必需清楚二者之间的关系，之后很多程序需要对此理解，尤其C语言的指针部分。</p>
+</blockquote>
+<p>lvalue(location value)表示数据存储于内存中的位置；</p>
+<p>rvalue(register value)表示存储在lvalue所标示内存位置的实际值，即rvalue是存储于lvalue位置处的值。</p>
+<h2 id="toc_21"><a name="toc_21" class="vnote-anchor" href="#"></a>使用强制类型转换符</h2>
+<p>强制将一种数据类型转换位另一种数据类型。
+例如：
+<code>val=(int) bigVal; bigVal=(long) val;</code></p>
+
+</body>
+</html>
