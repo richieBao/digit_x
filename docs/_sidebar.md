@@ -1,8 +1,9 @@
 * [digit-x](./markdown/preface.md)
-* 1\. 后生
-    * [1.1 ](./markdown/cleanCode.md)
-    * [1.2 ](./markdown/pythonInterpreterAndNote.md)
-* 2\. 先生
+* 🙀\. 后生
+    * 实验
+    * 活动
+    * 读书
+* 🦍\. 先生  
     * 数字营造导论 Introduction to Digital Construction
         * [IDC.1+2 概述](./markdown/IDC_overview.md)
         * [IDC.三维解析](./markdown/three-dimensional_analysis.md)
@@ -26,6 +27,9 @@
         * [RCB.5 C语言函数与作用域和存储类型](./markdown/RCB_C_function_with_scope_and_storage_types.md)
         * [RCB.6 指针_A](./markdown/RCB_C_point_A.md)
         * [RGB.7 指针_B](./markdown/RCB_C_point_B.md)
+        * [RGB.8 结构与联合](./markdown/RCB_C_struct_union.md)
+        * [RGB.9 Arudino库](./markdown/RCB_C_arduino_lib.md)
+        * [RGB.10 C语言(arduino)串讲，考前必备](./markdown/RCB_C_lecture_necessary_before_the_test.md)
 
     * misc
         * [m.1 数字营造概述](./markdown/overview_of_digital_construction.md)
@@ -44,6 +48,7 @@
         * [m.14 提取子流域](./markdown/extract_subwatershed.md)
         * [m.15 python测验_20171101_根据提供的数据采集程序下载自选城市的poi数据，基于python编写描述性统计(包括评分和价格等相关性分析)及图表代码](./markdown/python_test_20171101.md)
         * [m.16 “数字营造”本科教学体系建构](./markdown/construction_of_undergraduate_teaching_system_of_digital_construction.md)
+        * [m.17 空间数据分析-规划-引导](/markdown/spatial_data_analysis_planning_guidance.md)
 * 检索
     * [知识点检索](./markdown/codeToolIdx.md)
     * [参考文献索引](./markdown/reference.md)
