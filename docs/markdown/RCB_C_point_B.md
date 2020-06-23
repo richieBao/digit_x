@@ -205,9 +205,16 @@ Month x has x days. pt[idx]=x,*(pt+idx)=x,days[idx]=x
 <img src="./imgs/0132.jpg" height="auto" width="auto"  title="digit-x" />
 
 ### 指向二维数组的指针
-`int array_t[3][5]={{2，4，6，8，10}，{1，3，5，7，9}，{12，14，16，18，20}};  //定义整型3行，5列包含15个元素的二维数组array_t`
+
+```c
+int array_t[3][5]={{2，4，6，8，10}，{1，3，5，7，9}，{12，14，16，18，20}};  //定义整型3行，5列包含15个元素的二维数组array_t
+```
+
+
+
 
 <img src="./imgs/0133.jpg" height="auto" width="auto"  title="digit-x" />
+
 
 二维数组同样需要根据元素的类型对地址作适当的放大。例如array_t[3][5]声明为二维整型数组，每个数组元素占两个字节的存储单元。因此，假设array_t的首地址为0x1000，array_t+1的地址则为0x100A，即0x1000+2×5D=0x1000+0x000A=0x100A，array_t+2的地址则为，即0x1000+4×5D=0x1000+0x0014=0x1014。
 在C51中，array_t[0]、array_t[1]、array_t[2]可以看作3行一维数组名，分别代表每行一维数组的首地址，因此：
@@ -529,7 +536,8 @@ enum 枚举名{
 }；
 ```
 **枚举变量的声明**
-```C
+
+```c
 //1.定义枚举时声明枚举变量
 enum 枚举名{
 标识符[=整型常量];
@@ -672,3 +680,5 @@ void LEDLowWarning(){
 
 **运行结果**
 <img src="./imgs/0134.jpg" height="auto" width="auto"  title="digit-x">
+
+
