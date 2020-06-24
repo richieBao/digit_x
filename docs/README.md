@@ -30,7 +30,10 @@
 ## 关于学社
 “数字营造”学社是非盈利组织。以建筑•景观•规划•艺术高校为平台，以设计•规划企业为依托，探索数字化技术、设计方法。将数字化设计融入高校教学体系中，追寻未来设计。
 ## 社长
+
 * 现任社长
+
+  <img title="Wang Yaoyao(Artist)The little flower lies in the dust.It sought the path of the butterfly." src="./imgs/0005.jpg" height="100" width="auto" />
 
 * 往届社长
 
